@@ -1,0 +1,25 @@
+*
+{
+	margin:0px;
+}
+table
+{
+	table-layout:fixed;
+	text-align:right;
+	padding:30px;
+	margin:auto;
+}
+span
+{
+	color:green;
+	width:100px;
+	font-weight:bold;
+}
+.login
+{
+	margin:auto;
+	margin-top:200px;
+	width:300px;
+	height:120px;
+	border:1px solid green;
+}
