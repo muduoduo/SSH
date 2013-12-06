@@ -1,4 +1,4 @@
-package ustc.ssh;
+ package ustc.ssh;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -13,6 +13,12 @@ public class UserBean {
 	}
 	public static boolean login(String user,String pwd)
 	{
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return pwd.equals(userList.get(user));
 	}
 }

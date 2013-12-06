@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!DOCTYPE action-controller [
+	<!ELEMENT action-controller (action*,interceptor*)>
+	<!ELEMENT action (name,class,result+,interceptor-ref?)>
+	<!ELEMENT interceptor (name,class)>
+	<!ELEMENT interceptor-ref (name)>
+	<!ELEMENT name (#PCDATA)>
+	<!ELEMENT class (name,method)>
+	<!ELEMENT method (#PCDATA)>
+	<!ELEMENT result (name,type,value)>
+	<!ELEMENT type (#PCDATA)>
+	<!ELEMENT value (#PCDATA)>
+]>
+<action-controller>
+	<action>
+		<name>login</name>
+		<class>
+			<name>ustc.ssh.LoginAction</name>
+			<method>Login</method>
+		</class>
+		<result>
+			<name>success</name>
+			<type>forward</type>
+			<value>Login</value>
+		</result>
+		<result>
+			<name>failure</name>
+			<type>redirect</type>
+			<value>error.jsp</value>
+		</result>
+		<interceptor-ref>
+			<name>LogWriter</name>
+		</interceptor-ref>
+	</action>
+	<interceptor>
+		<name>LogWriter</name>
+		<class>
+			<name>ustc.ssh.LogWriter</name>
+			<method>Log</method>
+		</class>
+	</interceptor>
+</action-controller>
